@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Bavithran &amp; Gomathi | Wedding Invitation</title>
+<meta name="description" content="Join Bavithran & Gomathi as they celebrate their wedding on August 31, 2026 in Kanchipuram." />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Bavithran & Gomathi | Wedding Invitation" />
+<meta property="og:description" content="Join Bavithran & Gomathi as they celebrate their wedding on August 31, 2026 in Kanchipuram." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FFF9F7'/%3E%3Ctext x='50' y='62' font-family='Georgia,serif' font-size='40' fill='%23D8B45A' text-anchor='middle'%3EB%26G%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#FFF9F7;
+    --cream:#FDF7F3;
+    --peach:#E9A07A;
+    --peach-deep:#D9855C;
+    --blush:#F3C7C0;
+    --sage:#71836B;
+    --sage-soft:#9CAE93;
+    --gold:#D8B45A;
+    --text:#4A4847;
+    --text-soft:#8A8580;
+    --line: rgba(74,72,71,0.18);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Montserrat', sans-serif;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(circle at 15% 8%, rgba(233,160,122,0.05), transparent 30%),
+      radial-gradient(circle at 85% 92%, rgba(113,131,107,0.06), transparent 35%);
+  }
+
+  ::selection{ background:var(--blush); color:var(--text); }
+
+  .serif{ font-family:'Cormorant Garamond', serif; }
+  .script{ font-family:'Great Vibes', cursive; }
+
+  .eyebrow{
+    font-family:'Montserrat', sans-serif;
+    letter-spacing:0.32em;
+    font-size:0.68rem;
+    font-weight:500;
+    color:var(--sage);
+    text-transform:uppercase;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+
+  section{ position:relative; }
+
+  /* ---------- reveal animation ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity 1s cubic-bezier(.22,.8,.32,1), transform 1s cubic-bezier(.22,.8,.32,1);
+  }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  .reveal-scale{ opacity:0; transform:scale(0.94); transition:opacity 1.1s ease, transform 1.1s cubic-bezier(.22,.8,.32,1); }
+  .reveal-scale.in{ opacity:1; transform:scale(1); }
+  .delay-1{ transition-delay:.12s; } .delay-2{ transition-delay:.24s; } .delay-3{ transition-delay:.36s; } .delay-4{ transition-delay:.48s; }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .reveal-scale{ transition:none !important; opacity:1 !important; transform:none !important; }
+    *{ animation:none !important; }
+  }
+
+  /* ---------- scroll progress ---------- */
+  #scrollbar{
+    position:fixed; top:0; left:0; height:2px; width:0%;
+    background:linear-gradient(90deg, var(--peach), var(--gold));
+    z-index:9999; transition:width .1s linear;
+  }
+
+  /* ================= FLORAL SVG ================= */
+  .floral-corner{ position:absolute; pointer-events:none; z-index:2; opacity:0.95; }
+  .floral-corner svg{ display:block; }
+
+  /* ================= NAV ================= */
+  #site-nav{
+    position:fixed; top:0; left:0; right:0; z-index:400;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 6vw;
+    transition: background .5s ease, padding .4s ease, box-shadow .4s ease;
+  }
+  #site-nav.scrolled{
+    background:rgba(255,249,247,0.86);
+    backdrop-filter:blur(10px);
+    padding:14px 6vw;
+    box-shadow:0 6px 24px rgba(74,72,71,0.06);
+  }
+  .nav-mark{ font-family:'Cormorant Garamond', serif; font-size:1.3rem; letter-spacing:0.08em; font-weight:600; color:var(--text); }
+  .nav-mark span{ color:var(--peach-deep); }
+  .nav-links{ display:flex; gap:2.4rem; }
+  .nav-links a{
+    font-size:0.68rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase;
+    color:var(--text); position:relative; padding-bottom:4px;
+  }
+  .nav-links a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--gold);
+    transition:width .35s ease;
+  }
+  .nav-links a:hover::after, .nav-links a.active::after{ width:100%; }
+  #nav-toggle{ display:none; background:none; border:none; cursor:pointer; z-index:410; }
+  #nav-toggle span{ display:block; width:24px; height:1px; background:var(--text); margin:6px 0; transition:.3s; }
+  #mobile-menu{
+    position:fixed; inset:0; background:var(--cream); z-index:399;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2rem;
+    transform:translateY(-100%); transition:transform .5s cubic-bezier(.77,0,.18,1);
+  }
+  #mobile-menu.open{ transform:translateY(0); }
+  #mobile-menu a{ font-family:'Cormorant Garamond', serif; font-size:1.6rem; letter-spacing:0.08em; }
+
+  @media (max-width:860px){
+    .nav-links{ display:none; }
+    #nav-toggle{ display:block; }
+  }
+
+  /* ================= COVER / ENVELOPE ================= */
+  #cover{
+    position:fixed; inset:0; z-index:500;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--cream);
+    transition:transform 1.4s cubic-bezier(.87,0,.13,1), opacity 1.4s ease;
+  }
+  #cover.opened{ transform:translateY(-100%); opacity:0.4; pointer-events:none; }
+
+  .cover-texture{
+    position:absolute; inset:0;
+    background-image:radial-gradient(rgba(74,72,71,0.025) 1px, transparent 1px);
+    background-size:3px 3px;
+  }
+
+  .cover-frame{
+    position:relative;
+    width:min(88vw, 560px);
+    padding:3.4rem 2.2rem 3rem;
+    text-align:center;
+    border:1px solid rgba(216,180,90,0.55);
+  }
+  .cover-frame::before, .cover-frame::after{
+    content:''; position:absolute; width:34px; height:34px; border-color:var(--peach);
+  }
+  .cover-frame::before{ top:-1px; left:-1px; border-top:1.5px solid var(--peach); border-left:1.5px solid var(--peach); }
+  .cover-frame::after{ bottom:-1px; right:-1px; border-bottom:1.5px solid var(--peach); border-right:1.5px solid var(--peach); }
+
+  .cover-together{ font-size:0.72rem; letter-spacing:0.3em; color:var(--sage); text-transform:uppercase; margin-bottom:1.6rem; opacity:0; animation:fadeUp 1.2s ease .3s forwards; }
+  .cover-names{ font-family:'Great Vibes', cursive; font-size:clamp(3.2rem, 11vw, 5.2rem); color:var(--peach-deep); line-height:1; opacity:0; animation:fadeUp 1.2s ease .6s forwards; }
+  .cover-amp{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.3rem; color:var(--gold); margin:0.3rem 0; opacity:0; animation:fadeUp 1.2s ease .9s forwards; }
+  .cover-invite{ font-family:'Cormorant Garamond', serif; font-size:1.05rem; color:var(--text-soft); line-height:1.7; margin:1.6rem 0 2.2rem; opacity:0; animation:fadeUp 1.2s ease 1.2s forwards; }
+
+  @keyframes fadeUp{ from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);} }
+
+  #open-btn{
+    position:relative; display:inline-flex; align-items:center; gap:0.6rem;
+    padding:0.95rem 2.4rem; border:1px solid var(--gold); background:transparent;
+    color:var(--text); font-family:'Montserrat', sans-serif; font-size:0.72rem; letter-spacing:0.24em;
+    text-transform:uppercase; cursor:pointer; overflow:hidden;
+    opacity:0; animation:fadeUp 1.2s ease 1.5s forwards;
+    transition:transform .4s ease, box-shadow .4s ease, color .4s ease;
+  }
+  #open-btn:hover{ transform:scale(1.045); box-shadow:0 0 26px rgba(216,180,90,0.35); color:#3A3836; }
+  #open-btn .arrow{ transition:transform .4s ease; }
+  #open-btn:hover .arrow{ transform:translateX(5px); }
+  #open-btn::before{
+    content:''; position:absolute; top:0; left:-120%; width:60%; height:100%;
+    background:linear-gradient(120deg, transparent, rgba(216,180,90,0.45), transparent);
+    transform:skewX(-20deg);
+  }
+  #open-btn:hover::before{ animation:shimmer 1s ease; }
+  @keyframes shimmer{ to{ left:140%; } }
+
+  .petal{
+    position:absolute; pointer-events:none; opacity:0.65;
+    animation:fall linear infinite;
+  }
+  @keyframes fall{
+    0%{ transform:translate(0,-10vh) rotate(0deg); }
+    100%{ transform:translate(var(--drift,40px), 110vh) rotate(320deg); }
+  }
+
+  /* ================= HERO ================= */
+  #hero{
+    min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:9rem 6vw 5rem; position:relative; overflow:hidden;
+  }
+  .hero-eyebrow{ letter-spacing:0.35em; }
+  .hero-sub{ font-family:'Cormorant Garamond', serif; font-size:clamp(1.1rem,2vw,1.4rem); letter-spacing:0.12em; text-transform:uppercase; color:var(--text); margin-top:0.8rem; }
+
+  .hero-names{ margin:2.2rem 0; position:relative; }
+  .hero-brushstroke{
+    position:absolute; left:50%; top:50%; width:120%; max-width:640px; height:70%;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(ellipse at center, rgba(243,199,192,0.55), rgba(243,199,192,0) 70%);
+    filter:blur(6px); z-index:-1;
+  }
+  .hero-first, .hero-last{ font-family:'Great Vibes', cursive; font-size:clamp(3.4rem, 10vw, 7rem); color:var(--peach-deep); line-height:1; }
+  .hero-amp{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:clamp(1.6rem,3vw,2.2rem); color:var(--gold); margin:0.4rem 0; }
+
+  .hero-ornament{ width:120px; height:14px; margin:1.6rem auto; position:relative; }
+  .hero-ornament::before, .hero-ornament::after{ content:''; position:absolute; top:50%; width:44px; height:1px; background:var(--gold); }
+  .hero-ornament::before{ left:0; } .hero-ornament::after{ right:0; }
+  .hero-ornament svg{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); }
+
+  .hero-date{ display:flex; align-items:baseline; justify-content:center; gap:1.4rem; margin-top:1rem; flex-wrap:wrap; }
+  .hero-date .month{ font-family:'Cormorant Garamond', serif; font-size:1.1rem; letter-spacing:0.3em; color:var(--sage); }
+  .hero-date .day{ font-family:'Cormorant Garamond', serif; font-size:4.2rem; font-weight:500; color:var(--text); line-height:0.8; }
+  .hero-date .year-day{ font-size:0.78rem; letter-spacing:0.18em; color:var(--text-soft); text-align:left; }
+  .hero-date .year-day b{ display:block; color:var(--text); font-weight:600; letter-spacing:0.14em; margin-bottom:2px;}
+
+  .scroll-cue{ margin-top:3.2rem; font-size:0.65rem; letter-spacing:0.28em; color:var(--text-soft); text-transform:uppercase; display:flex; flex-direction:column; align-items:center; gap:0.5rem; }
+  .scroll-cue .chevron{ animation:bob 2s ease-in-out infinite; }
+  @keyframes bob{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(6px);} }
+
+  /* ================= SECTION FRAME (shared editorial container) ================= */
+  .container{ width:min(1080px, 90vw); margin:0 auto; }
+  .container-narrow{ width:min(760px, 88vw); margin:0 auto; }
+
+  .section-pad{ padding:7rem 0; }
+  .divider{ width:1px; height:56px; background:linear-gradient(var(--gold), transparent); margin:0 auto 1.6rem; }
+  .section-eyebrow{ text-align:center; }
+  .section-title{ font-family:'Cormorant Garamond', serif; font-size:clamp(2rem, 4vw, 2.8rem); text-align:center; margin-top:0.6rem; font-weight:500; }
+
+  hr.hairline{ border:none; height:1px; background:var(--line); width:min(1080px,90vw); margin:0 auto; }
+
+  /* ================= COUPLE ================= */
+  #couple{ background:var(--cream); }
+  .couple-msg{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:clamp(1.2rem,2.4vw,1.55rem); line-height:1.8; text-align:center; color:var(--text); max-width:640px; margin:2rem auto 0; }
+  .couple-portraits{ display:flex; justify-content:center; gap:2.4rem; margin-top:3.4rem; flex-wrap:wrap; }
+  .portrait{
+    width:210px; height:270px; position:relative; border-radius:2px;
+    background:linear-gradient(160deg, var(--blush), var(--peach) 130%);
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+    box-shadow:0 18px 40px -18px rgba(74,72,71,0.35);
+  }
+  .portrait::after{ content:''; position:absolute; inset:8px; border:1px solid rgba(255,255,255,0.55); }
+  .portrait span{ font-family:'Cormorant Garamond', serif; font-style:italic; color:rgba(255,255,255,0.9); font-size:0.85rem; letter-spacing:0.06em; z-index:2; }
+  .portrait-init{ font-family:'Great Vibes', cursive; font-size:3rem; color:rgba(255,255,255,0.95); }
+
+  /* ================= QUOTE ================= */
+  #quote{ position:relative; overflow:hidden; padding:8rem 0; text-align:center; }
+  .quote-text{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:clamp(1.4rem,3vw,2rem); line-height:1.75; max-width:680px; margin:0 auto; color:var(--text); }
+  .quote-sub{ margin-top:1.6rem; font-size:0.85rem; letter-spacing:0.04em; color:var(--text-soft); max-width:520px; margin-left:auto; margin-right:auto; line-height:1.8; }
+
+  /* ================= COUNTDOWN ================= */
+  #countdown{ background:linear-gradient(180deg, var(--bg), var(--cream)); }
+  .cd-grid{ display:flex; justify-content:center; gap:clamp(1rem,4vw,3.2rem); margin-top:2.6rem; flex-wrap:wrap; }
+  .cd-item{ text-align:center; min-width:90px; }
+  .cd-num{ font-family:'Cormorant Garamond', serif; font-size:clamp(2.6rem,6vw,3.6rem); font-weight:500; color:var(--peach-deep); line-height:1; }
+  .cd-label{ margin-top:0.6rem; font-size:0.62rem; letter-spacing:0.24em; color:var(--sage); text-transform:uppercase; }
+  .cd-sep{ font-family:'Cormorant Garamond', serif; font-size:2.2rem; color:var(--gold); align-self:center; opacity:0.6; }
+  .cd-done{ text-align:center; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.6rem; color:var(--peach-deep); margin-top:2rem; }
+
+  /* ================= EVENT DETAILS ================= */
+  #event{ background:var(--cream); }
+  .event-card{
+    position:relative; max-width:640px; margin:3rem auto 0; padding:3rem 2.6rem;
+    background:var(--bg); border:1px solid rgba(216,180,90,0.4);
+  }
+  .event-card::before, .event-card::after{ content:''; position:absolute; width:26px; height:26px; border-color:var(--peach); }
+  .event-card::before{ top:-1px; left:-1px; border-top:1.5px solid var(--peach); border-left:1.5px solid var(--peach); }
+  .event-card::after{ bottom:-1px; right:-1px; border-bottom:1.5px solid var(--peach); border-right:1.5px solid var(--peach); }
+  .event-name{ text-align:center; font-family:'Cormorant Garamond', serif; font-size:1.7rem; margin-bottom:2rem; }
+  .event-rows{ display:flex; flex-direction:column; gap:1.5rem; }
+  .event-row{ display:flex; gap:1.1rem; align-items:flex-start; }
+  .event-row .ic{ flex:0 0 auto; margin-top:2px; color:var(--sage); }
+  .event-row .lbl{ font-size:0.62rem; letter-spacing:0.2em; color:var(--text-soft); text-transform:uppercase; margin-bottom:2px; }
+  .event-row .val{ font-family:'Cormorant Garamond', serif; font-size:1.18rem; line-height:1.5; }
+
+  /* ================= LOCATION ================= */
+  #location{ }
+  .loc-wrap{ display:flex; gap:3.4rem; align-items:center; justify-content:center; margin-top:3rem; flex-wrap:wrap; }
+  .loc-info{ max-width:340px; }
+  .loc-venue{ font-family:'Cormorant Garamond', serif; font-size:1.7rem; margin-bottom:0.6rem; }
+  .loc-address{ font-size:0.9rem; line-height:1.9; color:var(--text-soft); letter-spacing:0.02em; }
+  .directions-btn{
+    display:inline-flex; align-items:center; gap:0.6rem; margin-top:1.8rem;
+    padding:0.85rem 2rem; border:1px solid var(--sage); color:var(--sage);
+    font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase;
+    transition:.35s ease;
+  }
+  .directions-btn:hover{ background:var(--sage); color:#fff; box-shadow:0 10px 26px -12px rgba(113,131,107,0.6); }
+  .qr-box{ text-align:center; padding:1.6rem; background:var(--cream); border:1px solid rgba(216,180,90,0.35); }
+  .qr-box img{ width:150px; height:150px; }
+  .qr-label{ margin-top:0.8rem; font-size:0.6rem; letter-spacing:0.22em; color:var(--sage); text-transform:uppercase; }
+
+  /* ================= TIMELINE ================= */
+  #timeline{ background:var(--cream); }
+  .tl-wrap{ max-width:520px; margin:3.2rem auto 0; position:relative; }
+  .tl-wrap::before{ content:''; position:absolute; left:9px; top:6px; bottom:6px; width:1px; background:var(--line); }
+  .tl-item{ position:relative; padding-left:2.6rem; padding-bottom:2.6rem; }
+  .tl-item:last-child{ padding-bottom:0; }
+  .tl-dot{ position:absolute; left:0; top:2px; width:19px; height:19px; border-radius:50%; background:var(--bg); border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; }
+  .tl-dot::after{ content:''; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  .tl-time{ font-size:0.68rem; letter-spacing:0.2em; color:var(--peach-deep); text-transform:uppercase; margin-bottom:2px; }
+  .tl-title{ font-family:'Cormorant Garamond', serif; font-size:1.3rem; }
+
+  /* ================= GALLERY ================= */
+  .gallery-grid{ column-count:3; column-gap:14px; margin-top:3rem; }
+  @media (max-width:760px){ .gallery-grid{ column-count:2; } }
+  .g-item{
+    break-inside:avoid; margin-bottom:14px; position:relative; overflow:hidden; cursor:pointer;
+    background:linear-gradient(150deg, var(--blush), var(--peach));
+  }
+  .g-item img{ width:100%; display:block; transition:transform .7s cubic-bezier(.22,.8,.32,1); }
+  .g-item:hover img{ transform:scale(1.06); }
+  .g-item .g-overlay{ position:absolute; inset:0; background:rgba(74,72,71,0); transition:.4s; display:flex; align-items:center; justify-content:center; }
+  .g-item:hover .g-overlay{ background:rgba(74,72,71,0.18); }
+  #lightbox{ position:fixed; inset:0; background:rgba(20,18,17,0.92); z-index:600; display:none; align-items:center; justify-content:center; padding:4vh 4vw; }
+  #lightbox.open{ display:flex; }
+  #lightbox img{ max-height:88vh; max-width:88vw; box-shadow:0 30px 80px rgba(0,0,0,0.5); }
+  #lightbox-close{ position:absolute; top:26px; right:32px; color:#fff; font-size:1.6rem; cursor:pointer; opacity:0.8; }
+  #lightbox-close:hover{ opacity:1; }
+
+  /* ================= FAMILY ================= */
+  #family{ }
+  .family-grid{ display:flex; justify-content:center; gap:5rem; margin-top:3rem; flex-wrap:wrap; text-align:center; }
+  .family-block .fam-label{ font-size:0.64rem; letter-spacing:0.24em; color:var(--sage); text-transform:uppercase; margin-bottom:0.8rem; }
+  .family-block .fam-title{ font-family:'Cormorant Garamond', serif; font-size:1.6rem; margin-bottom:0.7rem; }
+  .family-block .fam-note{ font-size:0.85rem; color:var(--text-soft); max-width:220px; line-height:1.7; }
+
+  /* ================= RSVP ================= */
+  #rsvp{ background:var(--cream); }
+  form#rsvp-form{ max-width:560px; margin:3rem auto 0; display:flex; flex-direction:column; gap:1.4rem; }
+  .field{ display:flex; flex-direction:column; gap:0.5rem; }
+  .field label{ font-size:0.65rem; letter-spacing:0.18em; color:var(--sage); text-transform:uppercase; }
+  .field input, .field textarea, .field select{
+    background:transparent; border:none; border-bottom:1px solid var(--line);
+    padding:0.6rem 0.1rem; font-family:'Cormorant Garamond', serif; font-size:1.1rem; color:var(--text);
+    transition:border-color .3s ease;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus{ outline:none; border-color:var(--gold); }
+  .rsvp-row{ display:flex; gap:1.4rem; }
+  .rsvp-row .field{ flex:1; }
+  .rsvp-buttons{ display:flex; gap:1rem; margin-top:0.6rem; flex-wrap:wrap; }
+  .rsvp-btn{
+    flex:1; min-width:180px; padding:0.9rem 1.4rem; text-align:center; font-size:0.68rem;
+    letter-spacing:0.18em; text-transform:uppercase; cursor:pointer; border:1px solid var(--gold);
+    background:transparent; color:var(--text); transition:.35s ease;
+  }
+  .rsvp-btn.primary:hover{ background:var(--peach); border-color:var(--peach); color:#fff; }
+  .rsvp-btn.secondary{ border-color:var(--line); color:var(--text-soft); }
+  .rsvp-btn.secondary:hover{ border-color:var(--sage); color:var(--sage); }
+  #rsvp-confirm{ display:none; text-align:center; margin-top:2rem; }
+  #rsvp-confirm.show{ display:block; animation:fadeUp .8s ease; }
+  #rsvp-confirm .tick{ font-size:2.4rem; color:var(--sage); }
+  #rsvp-confirm p{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.25rem; margin-top:0.6rem; }
+
+  /* ================= FOOTER ================= */
+  footer{ text-align:center; padding:5rem 0 3rem; position:relative; }
+  .footer-love{ font-family:'Great Vibes', cursive; font-size:2rem; color:var(--peach-deep); }
+  .footer-thanks{ margin-top:0.8rem; font-family:'Cormorant Garamond', serif; font-style:italic; color:var(--text-soft); }
+  .footer-made{ margin-top:2.4rem; font-size:0.62rem; letter-spacing:0.18em; color:var(--text-soft); text-transform:uppercase; }
+
+  /* ================= MUSIC CONTROL ================= */
+  #music-ctrl{
+    position:fixed; bottom:26px; right:26px; z-index:300;
+    width:52px; height:52px; border-radius:50%; background:var(--bg);
+    border:1px solid var(--gold); display:flex; align-items:center; justify-content:center;
+    cursor:pointer; box-shadow:0 10px 30px -10px rgba(74,72,71,0.35);
+    opacity:0; pointer-events:none; transition:opacity .6s ease, transform .3s ease;
+  }
+  #music-ctrl.show{ opacity:1; pointer-events:auto; }
+  #music-ctrl:hover{ transform:scale(1.08); }
+  #music-ctrl svg{ width:20px; height:20px; color:var(--peach-deep); }
+  #music-ctrl .disc{ position:absolute; inset:0; border-radius:50%; border:1px dashed var(--gold); opacity:0.5; animation:spin 6s linear infinite; animation-play-state:paused; }
+  #music-ctrl.playing .disc{ animation-play-state:running; }
+
+  @media (max-width:600px){
+    .section-pad{ padding:5rem 0; }
+    .loc-wrap{ gap:2rem; }
+    .rsvp-row{ flex-direction:column; }
+  }
+
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<div id="scrollbar"></div>
+
+<!-- ============ FLOATING PETALS (global, subtle) ============ -->
+<div id="petal-field" style="position:fixed; inset:0; pointer-events:none; z-index:5; overflow:hidden;"></div>
+
+<!-- ============ NAVIGATION ============ -->
+<nav id="site-nav">
+  <div class="nav-mark">B<span>&amp;</span>G</div>
+  <div class="nav-links">
+    <a href="#hero" class="nav-a active">Home</a>
+    <a href="#couple" class="nav-a">Our Story</a>
+    <a href="#event" class="nav-a">Event</a>
+    <a href="#location" class="nav-a">Location</a>
+    <a href="#rsvp" class="nav-a">RSVP</a>
+  </div>
+  <button id="nav-toggle" aria-label="Menu">
+    <span></span><span></span>
+  </button>
+</nav>
+<div id="mobile-menu">
+  <a href="#hero" class="m-link">Home</a>
+  <a href="#couple" class="m-link">Our Story</a>
+  <a href="#event" class="m-link">Event</a>
+  <a href="#location" class="m-link">Location</a>
+  <a href="#rsvp" class="m-link">RSVP</a>
+</div>
+
+<!-- ============ COVER / OPENING SCREEN ============ -->
+<div id="cover">
+  <div class="cover-texture"></div>
+
+  <!-- corner florals -->
+  <div class="floral-corner" style="top:-10px; left:-10px; width:180px;" id="corner-tl"></div>
+  <div class="floral-corner" style="top:-10px; right:-10px; width:150px; transform:scaleX(-1);" id="corner-tr"></div>
+  <div class="floral-corner" style="bottom:-10px; left:-10px; width:150px; transform:scaleY(-1);" id="corner-bl"></div>
+  <div class="floral-corner" style="bottom:-10px; right:-10px; width:180px; transform:scale(-1,-1);" id="corner-br"></div>
+
+  <div class="cover-frame">
+    <div class="cover-together">Together with their families</div>
+    <div class="cover-names">Bavithran</div>
+    <div class="cover-amp">&amp;</div>
+    <div class="cover-names">Gomathi</div>
+    <p class="cover-invite">Invite you to celebrate their<br/>Wedding</p>
+    <button id="open-btn">
+      <span>Open Invitation</span>
+      <span class="arrow">&#8594;</span>
+    </button>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section id="hero">
+  <div class="floral-corner" style="top:6vh; left:-40px; width:220px;" id="hero-corner-tl"></div>
+  <div class="floral-corner" style="bottom:2vh; right:-40px; width:220px; transform:scale(-1,-1);" id="hero-corner-br"></div>
+
+  <div class="eyebrow hero-eyebrow reveal">Your Cordially Invited To The</div>
+  <div class="hero-sub reveal delay-1">Wedding Ceremony</div>
+
+  <div class="hero-names reveal-scale delay-2">
+    <div class="hero-brushstroke"></div>
+    <div class="hero-first">Bavithran</div>
+    <div class="hero-amp">&amp;</div>
+    <div class="hero-last">Gomathi</div>
+  </div>
+
+  <div class="hero-ornament reveal delay-3">
+    <svg width="20" height="20" viewBox="0 0 20 20"><path d="M10 1 C13 6 19 7 19 10 C19 13 13 14 10 19 C7 14 1 13 1 10 C1 7 7 6 10 1Z" fill="none" stroke="#D8B45A" stroke-width="1"/></svg>
+  </div>
+
+  <div class="hero-date reveal delay-3">
+    <div class="year-day" style="text-align:right;"><b>Monday</b></div>
+    <div>
+      <div class="month">August</div>
+      <div class="day">31</div>
+    </div>
+    <div class="year-day"><b>5:00 AM – 6:30 AM</b>2026</div>
+  </div>
+
+  <div class="scroll-cue reveal delay-4">
+    <span>Scroll to Explore</span>
+    <span class="chevron">&#8595;</span>
+  </div>
+</section>
+
+<!-- ============ COUPLE ============ -->
+<section id="couple" class="section-pad">
+  <div class="container-narrow">
+    <div class="section-eyebrow eyebrow reveal">The Couple</div>
+    <h2 class="section-title reveal delay-1">Two Hearts, One Beautiful Journey</h2>
+    <p class="couple-msg reveal delay-2">Two hearts are coming together, two families are becoming one, and a beautiful new chapter begins.</p>
+
+    <div class="couple-portraits">
+      <div class="portrait reveal-scale delay-2">
+        <div style="text-align:center;">
+          <div class="portrait-init">B</div>
+          <span>Bavithran</span>
+        </div>
+      </div>
+      <div class="portrait reveal-scale delay-3">
+        <div style="text-align:center;">
+          <div class="portrait-init">G</div>
+          <span>Gomathi</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hairline" />
+
+<!-- ============ INVITATION MESSAGE / QUOTE ============ -->
+<section id="quote">
+  <div class="container-narrow">
+    <p class="quote-text reveal">"Some moments become memories, some memories become treasures, and some celebrations become a beautiful part of our forever."</p>
+    <p class="quote-sub reveal delay-2">We would be delighted to have you with us as we celebrate our wedding.</p>
+  </div>
+</section>
+
+<!-- ============ COUNTDOWN ============ -->
+<section id="countdown" class="section-pad">
+  <div class="container-narrow">
+    <div class="section-eyebrow eyebrow reveal">Almost There</div>
+    <h2 class="section-title reveal delay-1">Counting Down To Our Wedding Day</h2>
+
+    <div class="cd-grid reveal delay-2" id="cd-grid">
+      <div class="cd-item"><div class="cd-num" id="cd-days">00</div><div class="cd-label">Days</div></div>
+      <div class="cd-sep">·</div>
+      <div class="cd-item"><div class="cd-num" id="cd-hours">00</div><div class="cd-label">Hours</div></div>
+      <div class="cd-sep">·</div>
+      <div class="cd-item"><div class="cd-num" id="cd-mins">00</div><div class="cd-label">Minutes</div></div>
+      <div class="cd-sep">·</div>
+      <div class="cd-item"><div class="cd-num" id="cd-secs">00</div><div class="cd-label">Seconds</div></div>
+    </div>
+    <div class="cd-done" id="cd-done" style="display:none;"></div>
+  </div>
+</section>
+
+<!-- ============ EVENT DETAILS ============ -->
+<section id="event" class="section-pad">
+  <div class="container-narrow">
+    <div class="section-eyebrow eyebrow reveal">Save The Date</div>
+    <h2 class="section-title reveal delay-1">Join Us For Our Wedding</h2>
+
+    <div class="event-card reveal-scale delay-2">
+      <div class="event-name">Reception</div>
+      <div class="event-rows">
+        <div class="event-row">
+          <span class="ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+          </span>
+          <div><div class="lbl">Date</div><div class="val">Sunday, August 30, 2026</div></div>
+        </div>
+        <div class="event-row">
+          <span class="ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </span>
+          <div><div class="lbl">Time</div><div class="val">7:00 PM onwards</div></div>
+        </div>
+        <div class="event-row">
+          <span class="ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.3"/></svg>
+          </span>
+          <div><div class="lbl">Venue</div><div class="val">Devaki Wedding Convention Hall,<br/>Kanchipuram</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card reveal-scale delay-3">
+      <div class="event-name">Wedding</div>
+      <div class="event-rows">
+        <div class="event-row">
+          <span class="ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+          </span>
+          <div><div class="lbl">Date</div><div class="val">Monday, August 31, 2026</div></div>
+        </div>
+        <div class="event-row">
+          <span class="ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </span>
+          <div><div class="lbl">Time</div><div class="val">5:00 AM to 6:30 AM</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATION ============ -->
+<section id="location" class="section-pad" style="background:var(--cream);">
+  <div class="container-narrow">
+    <div class="section-eyebrow eyebrow reveal">Reception Venue</div>
+    <h2 class="section-title reveal delay-1">Where We Celebrate</h2>
+
+    <div class="loc-wrap">
+      <div class="loc-info reveal delay-2">
+        <div class="loc-venue">Devaki Wedding Convention Hall</div>
+        <div class="loc-address">Kanchipuram</div>
+        <a class="directions-btn" id="directions-link" href="https://www.google.com/maps/search/?api=1&query=Devaki+Wedding+Convention+Hall+Kanchipuram" target="_blank" rel="noopener">
+          Get Directions <span>&#8594;</span>
+        </a>
+      </div>
+      <div class="qr-box reveal delay-3">
+        <img id="qr-img" alt="QR code to venue location" src="" />
+        <div class="qr-label">Scan for Directions</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section id="timeline" class="section-pad">
+  <div class="container-narrow">
+    <div class="section-eyebrow eyebrow reveal">Wedding Celebrations</div>
+    <h2 class="section-title reveal delay-1">Reception & Wedding</h2>
+
+    <div class="tl-wrap">
+      <div class="tl-item reveal delay-1"><div class="tl-dot"></div><div class="tl-time">August 30 · 7:00 PM onwards</div><div class="tl-title">Reception</div></div>
+      <div class="tl-item reveal delay-2"><div class="tl-dot"></div><div class="tl-time">August 31 · 5:00 AM – 6:30 AM</div><div class="tl-title">Wedding</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAMILY ============ -->
+<section id="family" class="section-pad" style="background:var(--cream);">
+  <div class="container-narrow">
+    <div class="section-eyebrow eyebrow reveal">Our Blessings</div>
+    <h2 class="section-title reveal delay-1">With The Blessings Of Our Families</h2>
+
+    <div class="family-grid">
+      <div class="family-block reveal delay-2">
+        <div class="fam-label">Bride</div>
+        <div class="fam-title">Gomathi</div>
+        <div class="fam-note">With the blessings of her family</div>
+      </div>
+      <div class="family-block reveal delay-3">
+        <div class="fam-label">Groom</div>
+        <div class="fam-title">Bavithran</div>
+        <div class="fam-note">With the blessings of his family</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-love">With Love, Bavithran &amp; Gomathi</div>
+  <p class="footer-thanks">Thank you for being part of our special day.</p>
+  <div class="footer-made">Made with &#10084;</div>
+</footer>
+
+<!-- ============ MUSIC CONTROL ============ -->
+<div id="music-ctrl" aria-label="Toggle music">
+  <div class="disc"></div>
+  <svg id="music-icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" style="display:none;"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>
+  <svg id="music-icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/><line x1="3" y1="3" x2="21" y2="21"/></svg>
+</div>
+<!-- Replace the src below with your own wedding music file (mp3) to enable playback -->
+<audio id="bg-audio" loop preload="none">
+  <source src="" type="audio/mpeg" />
+</audio>
+
+<script>
+/* ============================================================
+   FLORAL SVG — reusable watercolor-style ornament (peach/blush/sage)
+   ============================================================ */
+function floralCluster(kind){
+  // kind: 'bloom' (flowers+leaves) or 'leaf' (sage leaves only)
+  if(kind === 'bloom'){
+    return `
+    <svg viewBox="0 0 220 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.9">
+        <path d="M10 40 C 40 10, 90 20, 100 60 C 70 55, 40 70, 10 40Z" fill="#9CAE93" opacity="0.55"/>
+        <path d="M0 90 C 30 70, 70 85, 75 120 C 45 110, 20 120, 0 90Z" fill="#71836B" opacity="0.5"/>
+        <ellipse cx="55" cy="45" rx="26" ry="19" fill="#F3C7C0" opacity="0.9" transform="rotate(-18 55 45)"/>
+        <ellipse cx="78" cy="35" rx="24" ry="17" fill="#E9A07A" opacity="0.85" transform="rotate(12 78 35)"/>
+        <ellipse cx="40" cy="25" rx="20" ry="15" fill="#F3C7C0" opacity="0.8" transform="rotate(30 40 25)"/>
+        <circle cx="60" cy="38" r="7" fill="#D8B45A" opacity="0.9"/>
+        <ellipse cx="30" cy="72" rx="18" ry="13" fill="#E9A07A" opacity="0.7" transform="rotate(-10 30 72)"/>
+        <circle cx="30" cy="72" r="4.5" fill="#D8B45A" opacity="0.8"/>
+        <path d="M5 130 C 20 110, 15 90, 0 80" stroke="#71836B" stroke-width="2" fill="none" opacity="0.5"/>
+        <path d="M15 60 C 5 50, 8 30, 20 15" stroke="#71836B" stroke-width="2" fill="none" opacity="0.5"/>
+      </g>
+    </svg>`;
+  }
+  return `
+    <svg viewBox="0 0 220 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.85">
+        <path d="M5 30 C 40 5, 95 15, 110 55 C 75 45, 45 60, 5 30Z" fill="#9CAE93" opacity="0.55"/>
+        <path d="M0 75 C 35 60, 70 75, 80 110 C 50 100, 20 105, 0 75Z" fill="#71836B" opacity="0.45"/>
+        <path d="M0 20 C 25 40, 20 65, 0 85" stroke="#71836B" stroke-width="2" fill="none" opacity="0.5"/>
+        <ellipse cx="35" cy="18" rx="16" ry="10" fill="#71836B" opacity="0.4" transform="rotate(-25 35 18)"/>
+        <ellipse cx="70" cy="35" rx="18" ry="11" fill="#9CAE93" opacity="0.4" transform="rotate(15 70 35)"/>
+        <circle cx="18" cy="45" r="4" fill="#D8B45A" opacity="0.55"/>
+      </g>
+    </svg>`;
+}
+document.getElementById('corner-tl').innerHTML = floralCluster('bloom');
+document.getElementById('corner-tr').innerHTML = floralCluster('leaf');
+document.getElementById('corner-bl').innerHTML = floralCluster('leaf');
+document.getElementById('corner-br').innerHTML = floralCluster('bloom');
+document.getElementById('hero-corner-tl').innerHTML = floralCluster('bloom');
+document.getElementById('hero-corner-br').innerHTML = floralCluster('bloom');
+
+/* ============================================================
+   COVER / ENVELOPE OPEN
+   ============================================================ */
+const cover = document.getElementById('cover');
+const openBtn = document.getElementById('open-btn');
+const musicCtrl = document.getElementById('music-ctrl');
+const audio = document.getElementById('bg-audio');
+const musicOn = document.getElementById('music-icon-on');
+const musicOff = document.getElementById('music-icon-off');
+let musicPlaying = false;
+
+openBtn.addEventListener('click', () => {
+  cover.classList.add('opened');
+  document.body.style.overflow = 'auto';
+  setTimeout(() => { cover.style.display = 'none'; }, 1500);
+  musicCtrl.classList.add('show');
+
+  // try to start music (will silently fail gracefully if no source provided)
+  if(audio.querySelector('source').src){
+    audio.play().then(()=>{
+      musicPlaying = true;
+      musicCtrl.classList.add('playing');
+      musicOn.style.display='block'; musicOff.style.display='none';
+    }).catch(()=>{ /* autoplay blocked or no source — user can tap control */ });
+  }
+});
+
+musicCtrl.addEventListener('click', () => {
+  if(!audio.querySelector('source').src) return;
+  if(musicPlaying){
+    audio.pause();
+    musicPlaying = false;
+    musicCtrl.classList.remove('playing');
+    musicOn.style.display='none'; musicOff.style.display='block';
+  } else {
+    audio.play().catch(()=>{});
+    musicPlaying = true;
+    musicCtrl.classList.add('playing');
+    musicOn.style.display='block'; musicOff.style.display='none';
+  }
+});
+
+document.body.style.overflow = 'hidden';
+
+/* ============================================================
+   NAV — scroll state, mobile menu, active link
+   ============================================================ */
+const siteNav = document.getElementById('site-nav');
+const navToggle = document.getElementById('nav-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+
+window.addEventListener('scroll', () => {
+  siteNav.classList.toggle('scrolled', window.scrollY > 40);
+  document.getElementById('scrollbar').style.width =
+    (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + '%';
+}, { passive:true });
+
+navToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+document.querySelectorAll('.m-link').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+const navSections = ['hero','couple','event','location'];
+const navAs = document.querySelectorAll('.nav-a');
+const io2 = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      navAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+    }
+  });
+}, { threshold:0.5 });
+navSections.forEach(id => { const el = document.getElementById(id); if(el) io2.observe(el); });
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+const revealEls = document.querySelectorAll('.reveal, .reveal-scale');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
+  });
+}, { threshold:0.15 });
+revealEls.forEach(el => io.observe(el));
+
+/* ============================================================
+   COUNTDOWN
+   ============================================================ */
+const eventDate = new Date('2026-08-31T05:00:00');
+function updateCountdown(){
+  const now = new Date();
+  const diff = eventDate - now;
+  if(diff <= 0){
+    document.getElementById('cd-grid').style.display = 'none';
+    const done = document.getElementById('cd-done');
+    done.style.display = 'block';
+    done.textContent = 'Thank You For Celebrating With Us';
+    return;
+  }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* ============================================================
+   QR CODE — venue directions
+   ============================================================ */
+const mapsUrl = "https://www.google.com/maps/search/?api=1&query=Devaki+Wedding+Convention+Hall+Kanchipuram";
+document.getElementById('qr-img').src = "https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=74-72-71&bgcolor=253-247-243&data=" + encodeURIComponent(mapsUrl);
+
+/* ============================================================
+   GALLERY — placeholder tiles + lightbox
+   ============================================================ */
+const galleryImages = [
+  { h: 260, label: 'A quiet morning' },
+  { h: 340, label: 'Hands held' },
+  { h: 220, label: 'Laughing together' },
+  { h: 300, label: 'Golden hour' },
+  { h: 250, label: 'A shared glance' },
+  { h: 320, label: 'Family warmth' },
+];
+const grid = document.getElementById('gallery-grid');
+galleryImages.forEach((g, i) => {
+  const div = document.createElement('div');
+  div.className = 'g-item reveal delay-' + ((i % 4) + 1);
+  div.style.height = g.h + 'px';
+  div.innerHTML = `<div class="g-overlay"></div>
+    <div style="width:100%;height:${g.h}px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.85);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;text-align:center;padding:1rem;">${g.label}</div>`;
+  div.addEventListener('click', () => {
+    document.getElementById('lightbox-img').style.display = 'none';
+    document.getElementById('lightbox').classList.add('open');
+  });
+  grid.appendChild(div);
+  io.observe(div);
+});
+document.getElementById('lightbox-close').addEventListener('click', () => document.getElementById('lightbox').classList.remove('open'));
+document.getElementById('lightbox').addEventListener('click', (e) => { if(e.target.id === 'lightbox') e.currentTarget.classList.remove('open'); });
+
+/* ============================================================
+   RSVP FORM
+   ============================================================ */
+const rsvpForm = document.getElementById('rsvp-form');
+const rsvpConfirm = document.getElementById('rsvp-confirm');
+document.querySelectorAll('.rsvp-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    if(btn.type === 'button'){
+      document.getElementById('r-attending').value = btn.dataset.choice;
+    }
+  });
+});
+rsvpForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  // NOTE: connect this to Google Sheets / Firebase / Supabase / an email service as needed.
+  rsvpForm.style.display = 'none';
+  rsvpConfirm.classList.add('show');
+});
+
+/* ============================================================
+   FLOATING PETALS — global subtle ambience
+   ============================================================ */
+const petalField = document.getElementById('petal-field');
+function spawnPetal(){
+  const p = document.createElement('div');
+  p.className = 'petal';
+  const size = 8 + Math.random() * 10;
+  const startX = Math.random() * window.innerWidth;
+  const duration = 14 + Math.random() * 10;
+  const drift = (Math.random() * 120 - 60) + 'px';
+  p.style.left = startX + 'px';
+  p.style.setProperty('--drift', drift);
+  p.style.animationDuration = duration + 's';
+  const colors = ['#F3C7C0', '#E9A07A', '#D8B45A'];
+  const color = colors[Math.floor(Math.random()*colors.length)];
+  p.innerHTML = `<svg width="${size}" height="${size}" viewBox="0 0 20 20"><path d="M10 2 C14 6 18 8 18 10 C18 12 14 14 10 18 C6 14 2 12 2 10 C2 8 6 6 10 2Z" fill="${color}" opacity="0.55"/></svg>`;
+  petalField.appendChild(p);
+  setTimeout(() => p.remove(), duration * 1000);
+}
+setInterval(spawnPetal, 1800);
+for(let i=0;i<3;i++) setTimeout(spawnPetal, i*600);
+</script>
+
+</body>
+</html>
